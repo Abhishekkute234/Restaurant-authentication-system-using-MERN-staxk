@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Standard Store - Cold Pressed Oils</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <img
+            src="https://via.placeholder.com/40x40"
+            alt="Logo"
+            class="w-10 h-10"
+          />
+          <h1 class="text-xl font-semibold">Standard Store</h1>
+        </div>
+        <div class="flex space-x-6 items-center">
+          <input
+            type="text"
+            class="border border-gray-300 rounded-full py-2 px-4 w-64"
+            placeholder="Search for products..."
+          />
+          <nav class="space-x-6">
+            <a href="#" class="text-gray-600">Categories</a>
+            <a href="#" class="text-gray-600">Cart</a>
+            <a href="#" class="text-gray-600">Account</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-semibold">Cold Pressed Oils (20 items)</h2>
+        <div>
+          <label for="sort" class="text-gray-600">Sort by:</label>
+          <select id="sort" class="border border-gray-300 rounded py-2 px-4">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-6 flex">
+        <!-- Filters Sidebar -->
+        <aside class="w-1/4 bg-white p-4 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-4">Filters</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Size</h4>
+            <ul class="space-y-2">
+              <li>
+                <input type="checkbox" id="size1" class="mr-2" /><label
+                  for="size1"
+                  >1 Litre</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="size2" class="mr-2" /><label
+                  for="size2"
+                  >15 Litres</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="size3" class="mr-2" /><label
+                  for="size3"
+                  >200 ML</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="size4" class="mr-2" /><label
+                  for="size4"
+                  >5 Litres</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="size5" class="mr-2" /><label
+                  for="size5"
+                  >500 ML</label
+                >
+              </li>
+              <li><a href="#" class="text-blue-500">+1 more</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-2">Price</h4>
+            <ul class="space-y-2">
+              <li>
+                <input type="checkbox" id="price1" class="mr-2" /><label
+                  for="price1"
+                  >₹70 - ₹1,260</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="price2" class="mr-2" /><label
+                  for="price2"
+                  >₹1,260 - ₹2,450</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="price3" class="mr-2" /><label
+                  for="price3"
+                  >₹2,450 - ₹3,640</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="price4" class="mr-2" /><label
+                  for="price4"
+                  >₹3,640 - ₹4,830</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="price5" class="mr-2" /><label
+                  for="price5"
+                  >₹4,830 - ₹6,020</label
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <a href="#" class="text-red-500">Clear all</a>
+          </div>
+        </aside>
+
+        <!-- Product Listings -->
+        <section class="w-3/4 ml-6 grid grid-cols-3 gap-6">
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <img
+              src="https://via.placeholder.com/150x200"
+              alt="Groundnut Oil"
+              class="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 class="text-lg font-semibold">Cold Pressed Groundnut Oil</h3>
+            <p class="text-sm text-gray-500">1 Litre</p>
+            <div class="flex items-center mt-2">
+              <span class="text-lg font-bold">₹80</span>
+              <span class="text-gray-500 line-through ml-2">₹95</span>
+              <span class="text-green-500 ml-2">(16% OFF)</span>
+            </div>
+            <button
+              class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            >
+              ADD +
+            </button>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div
+            class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <img
+              src="https://via.placeholder.com/150x200"
+              alt="Sunflower Oil"
+              class="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 class="text-lg font-semibold">Cold Pressed Sunflower Oil</h3>
+            <p class="text-sm text-gray-500">1 Litre</p>
+            <div class="flex items-center mt-2">
+              <span class="text-lg font-bold">₹80</span>
+              <span class="text-gray-500 line-through ml-2">₹110</span>
+              <span class="text-green-500 ml-2">(27% OFF)</span>
+            </div>
+            <button
+              class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            >
+              ADD +
+            </button>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div
+            class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <img
+              src="https://via.placeholder.com/150x200"
+              alt="Sesame Oil"
+              class="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 class="text-lg font-semibold">Cold Pressed Sesame Oil</h3>
+            <p class="text-sm text-gray-500">1 Litre</p>
+            <div class="flex items-center mt-2">
+              <span class="text-lg font-bold">₹85</span>
+              <span class="text-gray-500 line-through ml-2">₹110</span>
+              <span class="text-green-500 ml-2">(23% OFF)</span>
+            </div>
+            <button
+              class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            >
+              ADD +
+            </button>
+          </div>
+
+          <!-- Add more product cards as needed -->
+        </section>
+      </div>
+    </main>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full p-4 shadow-lg"
+    >
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.257 18.428c-1.27-.057-2.08-.57-3.057-.57-1.977 0-3.832-.706-5.226-2.1C2.196 13.432 1.5 11.577 1.5 9.6c0-1.39.574-2.7 1.563-3.688.992-.992 2.305-1.563 3.69-1.563h.006c2.977 0 5.573 2.294 5.573 5.574 0 .976-.237 1.895-.707 2.722-.148.26-.33.497-.546.711-.287.286-.67.593-1.012.83-.12.08-.27.18-.446.237-.074.023-.144.036-.205.036a1.048 1.048 0 01-.366-.071c-.12-.038-.235-.087-.348-.136-.116-.048-.238-.096-.353-.144-.12-.05-.24-.098-.35-.154l-.22-.104-.11-.052-.037-.02c-.173-.08-.343-.165-.505-.257-.072-.042-.134-.08-.197-.121l-.12-.07c-.07-.04-.141-.08-.211-.122l-.043-.026c-.255-.14-.493-.296-.725-.469-.174-.132-.355-.263-.52-.406-.247-.219-.482-.45-.71-.69-.01-.012-.03-.025-.047-.04-.074-.07-.146-.144-.218-.216-.162-.162-.317-.325-.465-.5-.008-.01-.02-.02-.03-.03l-.032-.03c-.13-.15-.253-.304-.378-.463-.108-.136-.217-.276-.322-.418-.014-.017-.024-.035-.037-.052l-.01-.01-.024-.034c-.048-.07-.096-.14-.145-.21a1.513 1.513 0 01-.152-.219c-.02-.032-.046-.062-.07-.095l-.09-.137c-.066-.096-.132-.19-.198-.287-.046-.067-.095-.135-.142-.203l-.04-.057a2.614 2.614 0 01-.193-.305c-.046-.077-.092-.154-.136-.232a2.613 2.613 0 01-.172-.333c-.046-.091-.093-.18-.137-.273-.03-.06-.065-.12-.098-.181-.066-.128-.137-.255-.204-.383-.092-.174-.187-.348-.272-.527-.062-.127-.122-.258-.181-.385-.073-.157-.146-.315-.208-.475-.075-.183-.145-.366-.211-.552-.1-.277-.192-.558-.27-.843-.074-.276-.145-.552-.21-.831-.073-.312-.13-.625-.185-.939a12.04 12.04 0 01-.03-.182 9.612 9.612 0 01-.034-.457c-.017-.217-.032-.433-.04-.652-.01-.294-.014-.588-.014-.88 0-3.03 1.173-5.88 3.302-8.002a11.281 11.281 0 018.005-3.294c1.358 0 2.7.263 3.976.779 1.265.511 2.447 1.271 3.481 2.305a11.398 11.398 0 013.309 8.084c0 3.142-1.227 6.094-3.455 8.323a11.367 11.367 0 01-8.324 3.452z"
+        ></path>
+      </svg>
+    </a>
+  </body>
+</html>

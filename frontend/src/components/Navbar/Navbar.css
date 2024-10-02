@@ -1,137 +1,93 @@
+/* Overlay for background dim effect */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 40; /* Behind the search box, logo, and search icon */
+}
+
+/* Navbar */
 .navbar {
-    padding: 20px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Galano Grotesque", sans-serif;
+  z-index: 50; /* Ensure it's above the overlay */
+  position: relative; /* Maintain stacking context */
 }
 
+/* Logo */
 .navbar .logo {
-    width: 150px;
+  z-index: 40; /* Make sure the logo stays above the overlay */
+  position: relative; /* Ensure it stays in its correct position */
 }
 
-.navbar-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    color: #49557E;
-    font-size: 18px;
+/* Search Icon and Input Box */
+.navbar-search-icon {
+  z-index: 60; /* Ensure search icon stays above the overlay */
+  position: relative;
 }
 
-.navbar-menu .active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557E;
+.navbar input {
+  z-index: 60; /* Ensure the search box is on top of everything else */
+  position: relative;
+  background-color: white; /* Solid white so it doesn't get affected by the overlay */
+
+  padding: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+/* Search Box Styling */
+.search-box {
+  background-color: #ffffff; /* Ensure the search box background is solid white */
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-height: 500px;
+  z-index: 60; /* Ensure it's above the overlay */
+  position: absolute; /* Ensure it remains above other content */
+  top: 80px; /* Adjust this value based on your layout */
 }
 
-.navbar-search-icon{
-position: relative;
+/* Grid layout inside the search box */
+.search-box-wrapper .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 10px;
 }
 
-.navbar-search-icon .dot{
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: #FF4C24;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
-}
- 
-
-
-
-.navbar-profile{
-    position: relative;
-
-}
-.navbar-profile-dropdown{
-    position: absolute;
-    display: none;
-    right: 0;
-    z-index: 1;
-}
-.navbar-profile-dropdown li{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-.navbar-profile-dropdown img{
-    width: 20px;
-}
-.navbar-profile-dropdown li:hover{
-    color: #FF4C24;
-}
-.navbar-profile:hover .navbar-profile-dropdown{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff2ef;
-    padding: 12px 25px;
-    border-radius: 4px;
-    border: 1px solid tomato;
-    outline: 2px solid white;
-    list-style: none;
-}
-.navbar-profile hr{
-    background-color: gray;
-    height: 1px;
-    border: none;
-}
-@media (max-width:1050px) {
-    .navbar .logo {
-        width: 140px;
-    }
-
-    .navbar-menu {
-        gap: 20px;
-        font-size: 17px;
-    }
-
-    .navbar-right {
-        gap: 30px;
-    }
-
-    .navbar-right img {
-        width: 22px;
-    }
-
-    .navbar-right button {
-        padding: 8px 25px;
-    }
+/* Styling individual search items */
+.search-box-wrapper img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-@media (max-width:900px) {
-    .navbar .logo {
-        width: 120px;
-    }
-
-    .navbar-menu {
-        gap: 15px;
-        font-size: 16px;
-    }
-
-    .navbar-right {
-        gap: 20px;
-    }
-
-    .navbar-right img {
-        width: 20px;
-    }
-
-    .navbar-right button {
-        font-size: 15px;
-        padding: 7px 20px;
-    }
+.search-box-wrapper p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 8px;
+  text-align: center;
 }
 
-@media (max-width:750px) {
-    .navbar-menu {
-        display: none;
-    }
+/* Hover effect on search items */
+.search-box-wrapper .grid div:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .search-box-wrapper .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -1,18 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 @import "remixicon/fonts/remixicon.css";
 
+/* Importing the custom fonts from the public folder */
+@font-face {
+  font-family: "Galano Grotesque";
+  src: url("/fonts/galanogrotesque-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Galano Grotesque";
+  src: url("/fonts/galanogrotesque-semibold.otf") format("opentype");
+  font-weight: 500; /* Semi-bold weight */
+  font-style: normal;
+}
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
-  scroll-behavior: smooth;
+  font-family: "Galano Grotesque", sans-serif;
 }
 
 body {
   min-height: 100vh;
+  font-family: "Galano Grotesque", sans-serif;
 }
 
 a {
@@ -20,21 +37,29 @@ a {
   color: inherit;
 }
 
+/* Global container */
 .app {
   width: 80%;
   margin: auto;
+  background-color: #FFFFFF;
+}
+
+/* Custom utility class for stretching text horizontally */
+.scale-x {
+  transform: scaleX(1.05); /* Adjust the value as needed */
+  display: inline-block; /* Ensures the scaling applies correctly */
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
 
+/* Responsive styling for app width */
 @media (max-width: 1050px) {
   .app {
     width: 90%;
