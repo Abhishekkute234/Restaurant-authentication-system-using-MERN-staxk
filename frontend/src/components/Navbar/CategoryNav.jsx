@@ -1,34 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const categories = [
+  "TiffinItems",
+  "RiceVarieties",
+  "CurriesGravies",
+  "Breads",
+  "SnacksSavories",
+  "ChutneysPickles",
+  "Beverages",
+  "DessertsSweets",
+];
 
 const CategoryNav = () => {
   return (
     <div>
       <div className="relative m-3">
-        <div className=" scale-x ml-5 navbar-category flex overflow-hidden text-[#1A181E] whitespace-nowrap">
-          <button className="px-4 py-1 hover:bg-[#F2F2F2] rounded-2xl">
-            Tiffin Items
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Rice Varieties
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Curries & Gravies
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Breads
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Snacks & Savories
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Chutneys & Pickles
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Beverages
-          </button>
-          <button className="px-4 py-1 hover:bg-[#F2F2F2]  rounded-2xl">
-            Desserts & Sweets
-          </button>
+        <div className="scale-x ml-5 navbar-category flex overflow-hidden text-[#1A181E] whitespace-nowrap">
+          {categories.map((category) => (
+            <Link key={category} to={`/category/${category}`}>
+              <button className="px-4 py-1 hover:bg-[#F2F2F2] rounded-2xl">
+                {category.replace(/([A-Z])/g, " $1")}{" "}
+                {/* Add space before capital letters */}
+              </button>
+            </Link>
+          ))}
         </div>
 
         {/* More button */}

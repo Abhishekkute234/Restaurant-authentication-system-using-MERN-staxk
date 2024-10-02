@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Verify from "./pages/Verify/Verify";
 import Dividebar from "./components/SmallComp/Dividebar";
 import CategoryNav from "./components/Navbar/CategoryNav";
+import Category from "./pages/Category/Category";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -25,7 +26,6 @@ const App = () => {
         <div className="lg:w-[84%] md:w-[96%]">
           <Navbar setShowLogin={setShowLogin} />
 
-          {/* Conditionally render CategoryNav only on the home page */}
           {location.pathname === "/" && (
             <CategoryNav setShowLogin={setShowLogin} />
           )}
@@ -36,6 +36,7 @@ const App = () => {
             <Route path="/order" element={<PlaceOrder />} />
             <Route path="/myorders" element={<MyOrders />} />
             <Route path="/verify" element={<Verify />} />
+            <Route path="/category/:categoryName" element={<Category />} />
           </Routes>
         </div>
       </div>
@@ -45,4 +46,3 @@ const App = () => {
 };
 
 export default App;
-  

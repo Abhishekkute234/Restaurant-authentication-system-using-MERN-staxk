@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .cart-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .cart-item {
+        width: 48%;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .cart-item img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .cart-item h2 {
+        margin-top: 0;
+      }
+
+      .cart-item .price {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .cart-item .price del {
+        color: #999;
+      }
+
+      .cart-total {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .cart-total h3 {
+        margin-top: 0;
+      }
+
+      .cart-total ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .cart-total li {
+        margin-bottom: 10px;
+      }
+
+      .cart-total .total {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        background-color: #0069d9;
+      }
+
+      @media (max-width: 768px) {
+        .cart-items {
+          flex-direction: column;
+        }
+
+        .cart-item {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shopping Cart</h1>
+      <div class="cart-items">
+        <div class="cart-item">
+          <img src="groundnut-oil.jpg" alt="Cold Pressed Groundnut Oil" />
+          <h2>
+            Cold Pressed Groundnut Oil / மரச்செக்கு கடலை எண்ணெய் / / / मूँगफली
+            तेल /
+          </h2>
+          <p class="price">₹80 <del>₹95</del> (16% off)</p>
+          <p>You saved ₹15</p>
+          <p>Size: 200 ML</p>
+          <p>Qty: 1</p>
+          <button class="btn">Remove</button>
+        </div>
+        <div class="cart-item">
+          <img src="sesame-oil.jpg" alt="Cold Pressed Sesame Oil" />
+          <h2>
+            Cold Pressed Sesame Oil / மரச்செக்கு நல்லெண்ணெய் / / / तिल तेल /
+          </h2>
+          <p class="price">₹170 <del>₹220</del> (23% off)</p>
+          <p>You saved ₹50</p>
+          <p>Size: 200 ML</p>
+          <p>Qty: 2</p>
+          <button class="btn">Remove</button>
+        </div>
+        <div class="cart-item">
+          <img src="hair-care-trio.jpg" alt="Hair Care Trio Pack" />
+          <h2>Hair Care Trio Pack</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
