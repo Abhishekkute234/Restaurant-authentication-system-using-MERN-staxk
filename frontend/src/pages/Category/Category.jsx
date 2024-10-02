@@ -1,8 +1,8 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
-import FoodItem from "../../components/FoodItem/FoodItem";
-import { StoreContext } from "../../Context/StoreContext";
+import FoodItem from "frontendsrccomponentsFoodItemFoodItem.jsx";
+import { StoreContext } from "frontendsrcpagesCategoryCategory.jsx";
 import { useParams } from "react-router-dom"; // Import useParams to get URL parameters
-import Dividebar from "../SmallComp/Dividebar";
+// import Dividebar from "./SmallComp/Dividebar";
 
 const Category = () => {
   const { category } = useParams(); // Get the category from URL params

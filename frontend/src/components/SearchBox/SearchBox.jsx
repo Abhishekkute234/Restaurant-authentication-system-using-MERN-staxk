@@ -1,19 +1,23 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../Context/StoreContext";
 
-const SearchBox = () => {
+const SearchBox = ({ searchQuery }) => {
   const { food_list, cartItems, addToCart, removeFromCart, url, currency } =
     useContext(StoreContext);
 
+  // Check if food_list is defined and filter based on search query
+  const filteredItems = Array.isArray(food_list)
+    ? food_list.filter((item) =>
+        item.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
   return (
-    <div className="w-[432px] h-[415px] p-4 border rounded-lg overflow-y-auto">
+    <div className="w-[432px] h-[415px] p-4 rounded-lg overflow-y-auto">
       <div className="w-[100%]">
-        <h2 className="text-lg font-bold mb-4 text-center text-blue-500">
-          Search Dishes
-        </h2>
         <div className="grid gap-3">
-          {food_list.length > 0 ? (
-            food_list.map((item) => (
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item) => (
               <div
                 key={item._id}
                 className="flex relative items-center w-[100%] h-24 bg-white rounded-lg p-2"
@@ -36,7 +40,7 @@ const SearchBox = () => {
                         : "No description available"}
                     </p>
                   </div>
-                  <div className="flex flex-col items-end  pb-2">
+                  <div className="flex flex-col items-end pb-2">
                     <p className="text-xl text-gray-800 mb-2">
                       {currency} {item.price}
                     </p>

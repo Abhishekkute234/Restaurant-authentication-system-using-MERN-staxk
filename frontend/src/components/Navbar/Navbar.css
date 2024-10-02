@@ -5,7 +5,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background: rgba(0, 0, 0, 0.311); /* Semi-transparent black */
   z-index: 40; /* Behind the search box, logo, and search icon */
 }
 
