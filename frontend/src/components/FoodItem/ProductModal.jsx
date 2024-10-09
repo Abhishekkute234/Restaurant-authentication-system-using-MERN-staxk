@@ -31,7 +31,7 @@ const ProductModal = ({ isOpen, onClose, product, addToCart, cartItems }) => {
 
   const handleBuyNow = () => {
     addToCart(product.id);
-    navigate("/order"); 
+    navigate("/order");
   };
 
   if (!isOpen) return null;
@@ -50,32 +50,32 @@ const ProductModal = ({ isOpen, onClose, product, addToCart, cartItems }) => {
 
         <div className="flex items-center mb-4">
           <img
-            className="w-16 h-16 rounded"
+            className="w-full rounded-t-lg"
             src={product.image}
             alt={product.name}
+            width="300"
+            height="300"
           />
-          <div className="ml-4">
-            <p className="text-gray-600">
-              ₹{product.price}{" "}
-              <span className="line-through">₹{product.oldPrice}</span>
-              <span className="text-green-500"> ({product.discount}% OFF)</span>
-            </p>
+        </div>
+
+        <div className="p-4">
+          <h2 className="text-lg font-semibold text-gray-800">
+            {product.name}
+          </h2>
+          <div className="flex items-center mt-2">
+            <span className="text-xl font-bold text-gray-800">
+              ₹{product.price}
+            </span>
+            <span className="text-sm line-through text-gray-500 ml-2">
+              ₹{product.oldPrice}
+            </span>
+            <span className="text-sm text-red-600 ml-2">
+              ({product.discount}% OFF)
+            </span>
           </div>
         </div>
 
-        <p className="font-semibold mb-2">Select size</p>
-        <div className="grid grid-cols-3 gap-2 mb-4">
-          {product.sizes.map((size, index) => (
-            <button
-              key={index}
-              className="border border-gray-300 p-2 rounded-md hover:bg-gray-200"
-            >
-              {size}
-            </button>
-          ))}
-        </div>
-
-        <div className="flex items-center justify-center mb-4">
+        <div className="flex items-center justify-center mt-4">
           <button
             className={`bg-red-500 text-white py-1 px-3 rounded-md ${
               quantity === 0 ? "opacity-50 cursor-not-allowed" : ""
@@ -85,7 +85,9 @@ const ProductModal = ({ isOpen, onClose, product, addToCart, cartItems }) => {
           >
             -
           </button>
-          <p className="mx-4 text-lg font-bold">{quantity}</p>
+          <span className="px-4 py-1 bg-gray-100 text-gray-800 border-t border-b border-gray-300">
+            {quantity}
+          </span>
           <button
             className="bg-green-500 text-white py-1 px-3 rounded-md"
             onClick={handleAddToCart}
@@ -94,7 +96,7 @@ const ProductModal = ({ isOpen, onClose, product, addToCart, cartItems }) => {
           </button>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-4">
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded-lg"
             onClick={handleAddToCart}

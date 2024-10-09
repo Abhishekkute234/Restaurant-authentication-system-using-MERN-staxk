@@ -24,7 +24,7 @@ const FoodItem = ({ image, name, price, desc, id }) => {
         <div className="mx-3">
           <p>{name}</p>
           <p className="line-clamp-1 mb-1">
-            {desc ? desc : 'No description available'}
+            {desc ? desc : "No description available"}
           </p>
         </div>
         <p className="text-xl mx-3">
